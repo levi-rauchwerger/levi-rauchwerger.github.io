@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://levi-rauchwerger.github.io/sitemap.xml
