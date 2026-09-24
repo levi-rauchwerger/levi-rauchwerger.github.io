@@ -43,7 +43,7 @@ h1 > span { color: var(--accent); }
 .profile { padding-top: 6px; }
 .portrait-frame { position: relative; padding-bottom: 14px; }
 .portrait-frame::after { content: ''; display: block; position: absolute; bottom: 0; left: 0; width: 42px; height: 3px; background: var(--bright); }
-.portrait { width: 100%; height: auto; border-radius: 2px;
+.portrait { width: 100%; height: auto; aspect-ratio: 437 / 590; object-fit: cover; object-position: center top; border-radius: 2px;
   /* Fade only the outer border; the face remains fully opaque and unfiltered. */
   -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent), linear-gradient(to bottom, transparent, #000 6%, #000 94%, transparent);
   -webkit-mask-composite: source-in;
