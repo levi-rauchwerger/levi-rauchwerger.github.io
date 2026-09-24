@@ -43,14 +43,26 @@ h1 > span { color: var(--accent); }
 .profile { padding-top: 6px; }
 .portrait-frame { position: relative; padding-bottom: 14px; }
 .portrait-frame::after { content: ''; display: block; position: absolute; bottom: 0; left: 0; width: 42px; height: 3px; background: var(--bright); }
-.portrait { width: 100%; height: auto; border-radius: 2px; }
+.portrait { width: 100%; height: auto; border-radius: 2px;
+  /* Fade only the outer border; the face remains fully opaque and unfiltered. */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent), linear-gradient(to bottom, transparent, #000 6%, #000 94%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent), linear-gradient(to bottom, transparent, #000 6%, #000 94%, transparent);
+  mask-composite: intersect;
+}
 .contact { margin-top: 27px; }
 .contact .eyebrow { display: block; margin-bottom: 6px; }
 .email { display: block; font-size: .875rem; text-decoration: none; overflow-wrap: anywhere; }
 .social-links { display: flex; flex-wrap: wrap; column-gap: 19px; row-gap: 7px; margin-top: 15px; }
 .social-links a { font-size: .875rem; white-space: nowrap; }
 .landscape { overflow: hidden; border-radius: 2px; }
-.landscape img { width: 100%; height: auto; }
+.landscape img { width: 100%; height: auto;
+  filter: brightness(1.025) saturate(.92);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent), linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent), linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
+  mask-composite: intersect;
+}
 .about-landscape { margin-top: 60px; }
 .page-heading { padding-bottom: 49px; }
 .record-list { border-top: 1px solid var(--ink); }
